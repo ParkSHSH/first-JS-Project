@@ -10,8 +10,12 @@ let todoList = []
 buttonTodo.addEventListener("click", addTodo);
 
 function addTodo() {
-    let thingTodo = inputTodo.value;
-    todoList.push(thingTodo);
+    let task = {
+        id: randomIDgenerate(), 
+        taskContent: inputTodo.value,
+        isComplete: false
+    }
+    todoList.push(task);
     console.log(todoList);
     render();
 }
@@ -20,14 +24,25 @@ function render() {
     let resultHTML = "";
     for (let i = 0; i < todoList.length; i++) {
         resultHTML += `<div class="todo-box">
-        <div class="todo"> ${todoList[i]} </div>
-        <div class="todo"> <button>Check</button> <button>Delete</button></div>
+        <div class="todo"> ${todoList[i].taskContent} </div>
+        <div class="todo"> <button onclick="toggleComplete">Check</button> <button>Delete</button></div>
         </div>`;
     }
 
     document.getElementById("task-board").innerHTML = resultHTML;
 }
+
+function toggleComplete() {
+    task.isComplete
+}
+
+function randomIDgenerate() {
+    return Date.now();
+}
 // 체크버튼: 할 일 완료, 취소선
+
+
+
 // 탭으로 할일들의 목록을 상태별로 체크 가능
 // 모바일 버전에서도 확인 가능  -> 부트스트랩 쓰라는 뜻이잖아?
 // 탭 누르면 언더바가 움직임
