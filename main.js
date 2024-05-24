@@ -26,9 +26,10 @@ function render() {
     if (todoList[i].isComplete == true) {
       resultHTML += `<div class="todo-box-done" "todo-box">
             <div class="todo-done"> ${todoList[i].taskContent} </div>
-            <div class="todo"> <svg xmlns="http://www.w3.org/2000/svg" color="green" width="32" height="32" fill="currentColor" onclick="toggleComplete('${todoList[i].id}')" class="bi bi-check-lg" viewBox="0 0 16 16">
-            <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"/>
-          </svg>
+            <div class="todo"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" onclick="toggleComplete('${todoList[i].id}')" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z"/>
+          <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466"/>
+        </svg>
             <svg xmlns="http://www.w3.org/2000/svg" color="red" width="32" height="32" fill="currentColor" onclick="deleteTask('${todoList[i].id}')" class="bi bi-x" viewBox="0 0 16 16">
             <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
             </svg></div>
